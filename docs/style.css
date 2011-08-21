@@ -1,0 +1,21 @@
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 12pt;
+}
+
+h2 {
+	border-top: 1px solid #666;
+}
+
+#wrapper {
+	width: 800px;
+	margin: 0 auto;
+}
+
+#footer {
+	border-top: 1px solid #666;
+	margin: 15px 0 10px 0;
+	text-align: center;
+	padding: 3px;
+	font-size: 0.8em;
+}
