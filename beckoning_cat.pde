@@ -6,7 +6,8 @@ const int DELAY_MULTIPLICATOR = 1;
 const int ARM_MIN = 60;
 const int ARM_MAX = 120;
 const int ARM_PROBABILITY = 20;
-const int SOUND_PROBABILITY = 5;
+const int SOUND_PROBABILITY = 2;
+const int STOP_PROBABILITY = 5;
 
 // Variables
 Servo servo1; 
@@ -26,7 +27,7 @@ void setup()
   servo2.write(90);
   
   // Initialize random number generation
-  randomSeed(analogRead(7));
+  randomSeed(analogRead(0));
   
   // Buzzer on Pin 3
   pinMode(3, OUTPUT);
@@ -56,6 +57,9 @@ void loop()
         analogWrite(3, 30);
         delay(500);
         analogWrite(3, 0);
+      } else if (random(100) < STOP_PROBABILITY) {
+        servo1.write(random(360));
+        delay(10000);
       }
     }
   }
